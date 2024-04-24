@@ -43,14 +43,6 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{url('/menu')}}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-layout-dashboard"></i>
-                </span>
-                <span class="hide-menu">menu</span>
-              </a>
-            </li>
-             <li class="sidebar-item">
               <a class="sidebar-link" href="{{url('/jenis')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
@@ -58,6 +50,15 @@
                 <span class="hide-menu">jenis</span>
               </a>
             </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{url('/menu')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">menu</span>
+              </a>
+            </li>
+             
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{url('/meja')}}" aria-expanded="false">
                 <span>
@@ -73,14 +74,14 @@
                 </span>
                 <span class="hide-menu">stock</span>
               </a>
-              <li class="sidebar-item">
+            <!-- <li class="sidebar-item">
               <a class="sidebar-link" href="{{url('/produk_titipan')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
                 <span class="hide-menu">produk titipan</span>
               </a>
-            </li>
+            </li> -->
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{url('/pemesanan')}}" aria-expanded="false">
@@ -91,6 +92,22 @@
               </a>
             </li>
             <li class="sidebar-item">
+              <a class="sidebar-link" href="{{url('/Absensi')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">Absensi Kerja</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{url('/contact')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">Contact us</span>
+              </a>
+            </li>
+            <!-- <li class="sidebar-item">
               <a class="sidebar-link" href="{{url('/aplikasi')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
@@ -111,7 +128,7 @@
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
-                <span class="hide-menu">sejarah pembuatan</span>
+                <span class="hide-menu">sejarah pembuatan</span> -->
               </a>
             </li>
             

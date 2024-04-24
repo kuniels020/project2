@@ -9,6 +9,9 @@ use App\Http\Controllers\JenisController;
 use App\Http\Controllers\ProdukTitipanController;
 use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\transaksiController;
+use App\Http\Controllers\PegawaiKerjaController;
+use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -29,5 +32,10 @@ Route::resource('jenis', JenisController::class);
 Route::resource('produk_titipan', ProdukTitipanController::class);
 Route::resource('pemesanan', PemesananController::class);
 Route::resource('aplikasi', AplikasiConttroller::class);
+Route::resource('pegawai', PegawaiConttroller::class);
+Route::get('export/category',[CategoryController::class, 'exportData'])->name('export-category');
+Route::resource('Absensi', AbsensiController::class);
+Route::resource('contact', ContactController::class);
+
 
 

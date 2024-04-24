@@ -16,7 +16,7 @@ class jenis extends Model
         return $this->hasMany(Menu::class,'jenis_id','id');
     }
    public function categori(){
-    return $this->belongsTo(category::class);
+    return $this->belongsTo(Category::class);
    } 
 }
 

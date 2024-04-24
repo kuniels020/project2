@@ -17,7 +17,7 @@
             <td>{{ $p->created_at}}</td>
             <td>{{ $p->updated_at}}</td>
             <td>
-                <button class="btn btn-primary show-bs-modal" data-toggle="modal" data-target="#modalEdit" data-mode="edit" data-id="{{$p->id}}" data-nomor_meja="{{$p->nomor_meja}}" data-kapasitas="{{$p->kapasitas}}" data-status="{{$p->status}}">
+                <button class="btn btn-primary show-bs-modal" data-bs-toggle="modal" data-bs-target="#modalFormMeja" data-mode="edit" data-id="{{$p->id}}" data-nomor_meja="{{$p->nomor_meja}}" data-kapasitas="{{$p->kapasitas}}" data-status="{{$p->status}}">
                     <i class="fas fa-edit"></i>
                 </button>
                 <form action="{{ route('meja.destroy', $p->id) }}" method="post" style="display: inline">

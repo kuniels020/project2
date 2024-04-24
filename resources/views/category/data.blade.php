@@ -16,9 +16,10 @@
             <td>{{ $p->created_at}}</td>
             <td>{{ $p->updated_at}}</td>
             <td>
-            <button class="btn btn-primary show-modal" data-bs-toggle="modal" data-bs-target="#modalEdit" data-mode="edit" data-id="{{$p->id}}" 
-                data-nama_category="{{$p->nama_category}}" data-category="{{$p->category}}">
-                    <i class="fas fa-edit"></i>
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#modalFormcategegori" data-mode="edit" data-id="{{ $p->id }}" data-nama="{{ $p->nama }}">
+    <i class="fas fa-edit"></i>
+</button>
+
                 <form action="{{ route('category.destroy', $p->id) }}" method="post" style="display: inline">
                   @csrf
                     @method('DELETE')

@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Form Meja</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Form menu</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -14,7 +14,7 @@
           <div class="form-group row">
             <label for="nama" class="col-sm-4 col-form-label">Nama</label>
             <div class="col-sm-8">
-              <input type="text" class="nama" id="nama" name="nama" placeholder="Nama menu">
+              <input type="text" class="nama" id="nama" name="nama" placeholder="Nama">
             </div>
           </div>
 

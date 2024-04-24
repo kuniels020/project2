@@ -7,6 +7,8 @@ use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PaketExport;
 
 class CategoryController extends Controller
 {
@@ -54,6 +56,8 @@ class CategoryController extends Controller
         if ($request->expectsJson()) {
             return response()->json(['category' => $category], Response::HTTP_OK);
         }
+        $date = date('Y-M-D');
+        return Excel::download(new PaketExport,$date.'_paket.xlsx');
 
         return view('category.show', compact('category'));
     }
@@ -65,7 +69,7 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
-    return view('category.edit', compact('category'));
+        //
     }
 
 
@@ -74,7 +78,8 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        $category->update($request->all());
+        $validated =$request->validated();
+        $category->update($validated);
     
         return redirect()->route('category.index')->with('success', 'Data Category berhasil diupdate!');
     }

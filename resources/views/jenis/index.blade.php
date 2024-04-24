@@ -42,7 +42,7 @@
     </div>
 
     @endif
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">tambahkan</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFormjenis" data-bs-whatever="@getbootstrap">tambahkan</button>
 
     <div class="mt-3">
       @include('jenis.data')
@@ -56,7 +56,6 @@
 </div>
 <!-- /.card -->
 @include('jenis.form')
-@include('jenis.edit')
 </section>
 <!-- /.content -->
 @endsection
@@ -64,22 +63,38 @@
 @push('script')
 <!-- Ensure jQuery is included before these scripts -->
 
+<script>
+    console.log("halaman category");
+    
+console.log('test')
 
-        // Edit data modal setup
-       // Assuming you're using jQuery
 $(document).ready(function() {
-    $('#modalEdit').on('show.modal', function(e) {
-        let button = $(e.relatedTarget);
-        let id = button.data('id');
-        let nama = button.data('nama');
-        console.log("nama jenis : " + nama)        // Populate the form fields
-        $('#nama_edit').val(nama);
+  $('#modalFormjenis').on('show.bs.modal', function(e) {
+    const btn = $(e.relatedTarget);
+    const mode = btn.data('mode');
+    const nama_jenis = btn.data('nama_jenis');
+    const categori_id = btn.data('categori_id');
+    const id = btn.data('id');
+    const modal = $(this);
 
-        // Set the form action dynamically
-        $('.form-edit').attr('action', `/jenis/${id}`);
-    });
+    console.log(mode)
+    if (mode === 'edit') {
+      
+      modal.find('.modal-title').text('Edit Data jenis');
+      modal.find('#nama_jenis').val(nama_jenis);
+      modal.find('#categori_id').val(categori_id);
+      modal.find('.modal-body form').attr('action', '{{ url("jenis") }}/' + id);
+      modal.find('#method').html('@method("PUT")');
+    } else {
+      modal.find('.modal-title').text('Input Data jenis');
+      modal.find('#nama_jenis').val(''); // Clear the input field if not in edit mode
+      modal.find('#categori_id').val(''); // Clear the input field if not in edit mode
+      modal.find('.modal-body form').attr('action', '{{ url("jenis") }}');
+      modal.find('#method').html(''); // Clear the method input if not in edit mode
+    }
+  });
 });
-
 </script>
+
 
 @endpush

@@ -22,7 +22,8 @@ class StoreJenisRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+           'nama_jenis' =>'required'
+           
         ];
     }
 }

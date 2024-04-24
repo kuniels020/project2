@@ -55,7 +55,7 @@
         </div>
         <!-- /.card-footer-->
     </div>
-    @include('menu.edit')
+
 </div>
 @include('menu.form')
 
@@ -64,49 +64,46 @@
 @endsection
 
 @push('script')
-<<script>
-    $('.alert-success').fadeTo(2000, 500).slideUp(500, function() {
-        $('.alert-success').slideUp(500);
-    });
+<script>
+    console.log("halaman category");
+    
+console.log('test')
 
-    $('.delete-data').on('click', function(e) {
-        e.preventDefault();
-        const data = $(this).closest('tr').find('td:eq(1)').text();
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $(e.target).closest('form').submit();
-            } else {
-                Swal.close();
-            }
-        });
-    });
+$(document).ready(function() {
+  $('#modalFormmenu').on('show.bs.modal', function(e) {
+    const btn = $(e.relatedTarget);
+    const mode = btn.data('mode');
+    const nama_menu = btn.data('nama_menu');
+    const harga = btn.data('harga');
+    const image = btn.data('image');
+    const deskripsi = btn.data('deskripsi');
+    const jenis_id = btn.data('jenis_id');
+    const id = btn.data('id');
+    const modal = $(this);
 
-    $(document).on('show.bs.modal', '#modal', function(e) {
-        alert('tes');
-        let button = $(e.relatedTarget);
-        let id = button.data('id');
-        let nama = button.data('nama');
-        let harga = button.data('harga');
-        let image = button.data('image');
-        let deskripsi = button.data('deskripsi');
-        console.log(id);
-        $('#nama_menu').val(nama);
-        $('#harga').val(harga);
-        $('#image').val(image);
-        $('#deskripsi').val(deskripsi);
-        $('#form-menu').attr('action', `/menu/${id}`);
-    });
-
-    $(document).on('show.bs.modal', '#modalEdit', function(e) {
-        let button = $(e.relatedTarget);
-        let id = button
+    console.log(mode)
+    if (mode === 'edit') {
+      
+      modal.find('.modal-title').text('Edit Data menu');
+      modal.find('#nama_menu').val(nama_menu);
+      modal.find('#harga').val(harga);
+      modal.find('#image').val(image);
+      modal.find('#deskripsi').val(deskripsi);
+      modal.find('#jenis_id').val(jenis_id);
+      modal.find('.modal-body form').attr('action', '{{ url("menu") }}/' + id);
+      modal.find('#method').html('@method("PUT")');
+    } else {
+      modal.find('.modal-title').text('Input Data menu');
+      modal.find('#nama_menu').val(''); // Clear the input field if not in edit mode
+      modal.find('#harga').val(''); // Clear the input field if not in edit mode
+      modal.find('#image').val(''); // Clear the input field if not in edit mode
+      modal.find('#deskripsi').val(''); // Clear the input field if not in edit mode
+      modal.find('#jenis_id').val(''); // Clear the input field if not in edit mode
+      modal.find('.modal-body form').attr('action', '{{ url("menu") }}');
+      modal.find('#method').html(''); // Clear the method input if not in edit mode
+    }
+  });
+});
+</script>
 
 @endpush

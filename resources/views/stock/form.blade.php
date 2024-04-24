@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modalFormstock" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalfromstock" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -10,16 +10,17 @@
 
         <form method="post" action="stock">
           @csrf
+          <div id="method"></div>
           <div class="form-group row">
             <label for="staticEmail" class="col-sm-4 col-form-label">Menu ID</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control" id="ModalFromstock" name="menu_id">
+              <input type="text" class="form-control" id="menu_id" name="menu_id">
             </div>
           </div>
           <div class="form-group row">
             <label for="staticEmail" class="col-sm-4 col-form-label">Jumlah</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control" id="ModalFormstock" name="jumlah">
+              <input type="text" class="form-control" id="jumlah" name="jumlah">
             </div>
           </div>
 

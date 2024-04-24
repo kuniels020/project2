@@ -18,7 +18,7 @@
             <td class="text-right">{{ $p->image }}</td>
             <td class="text-right">{{ $p->deskripsi }}</td>
             <td class="text-right">
-            <button class="btn" data-bs-toggle="modal" data-bs-target="#modalEdit" data-mode="edit" data-id="{{ $p->id }}" 
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#modalFormmenu" data-mode="edit" data-id="{{ $p->id }}" 
              data-nama="{{ $p->nama }}"
              data-harga="{{ $p->harga }}"
              data-image="{{ $p->image }}"

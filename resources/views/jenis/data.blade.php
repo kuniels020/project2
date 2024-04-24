@@ -3,7 +3,8 @@
         <tr>
             <th>No.</th>
             <th>Nama Jenis</th>
-            <th>Kategori Id</th>
+            <th>Kategori</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -14,14 +15,11 @@
         <tr>
             <td>{{ $i++ }}</td> <!-- Increment $i separately from the display -->
             <td>{{ $p->nama_jenis}}</td>
-            <td>{{ $p->kategori_id}}</td>
-            <td>{{ $p->created_at}}</td>
-            <td>{{ $p->updated_at}}</td>
+            <td>{{ $p->categori->nama}}</td>
             <td>
-                <button class="btn btn-primary show-modal" data-bs-toggle="modal" data-bs-target="#modalEdit" data-mode="edit" data-id="{{$p->id}}" 
-                data-nama_jenis="{{$p->nama_jenis}}" data-jenis="{{$p->jenis}}">
-                    <i class="fas fa-edit"></i>
-                </button>
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalFormjenis" data-mode="edit" data-id="{{ $p->id }}" data-nama_jenis="{{ $p->nama_jenis}}" data-categori_id="{{ $p->categori_id }}">
+    <i class="fas fa-edit"></i>
+</button>
                 <form action="{{ route('jenis.destroy', $p->id) }}" method="post" style="display: inline">
                   @csrf
                     @method('DELETE')

@@ -56,11 +56,11 @@ class MenuController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Menu $menu)
-    {
-        $menu = Menu::find($menu);
-        $categories = Category::all();
-        return view('menu.edit', compact('menu', 'categories'));
-    }
+{
+    $categories = Category::all();
+    return view('menu.edit', compact('menu', 'categories'));
+}
+
 
     /**
      * Update the specified resource in storage.

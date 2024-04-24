@@ -32,43 +32,8 @@
 
             </div>
         </div>
-<style>
-.menu-container{
-list-style-type: none;
-}
-.menu-container li{
-margin-bottom: 15px;
-}
 
-.menu-container li h3{
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 18px;
-    background-color: aliceblue;
-    padding: 5px 15px;
-    /* margin-bottom: 10px; */
-}
 
-.menu-item{
-    list-style-type: none;
-    display: flex;
-    gap: 1em;
-    margin: 10px 20px;
-
-}
-
-.menu-item li{
-    background-color: beige;
-    padding: 10px 20px;
-
-}
-<script>
-$(function){
-    const orderList = []
-    $(".menu-item li")
-}
-</script>
-</style>
         <div class="item content">
             <h3>Order</h3>
             <ul class="ordered-list">
@@ -84,6 +49,20 @@ $(function){
         <!-- /.card -->
     </main><!-- End #main -->
 </section>
+
 @endsection
 
-       
+@push('script')
+<script>
+$(function(){
+    const orderedList =[];
+
+    const sum = () => {
+        return orderedList.reduce((accumulator, object) =>{
+            return accumulator + (object.harga* object.qty);
+        },0);
+    };
+
+    const changeQty
+})    
+</script>

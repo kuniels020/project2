@@ -13,7 +13,7 @@
             <td>{{ $p->menu_id}}</td>
             <td>{{ $p->jumlah}}</td>
             <td>
-                <button class="btn btn-primary show-bs-modal" data-toggle="modal" data-target="#modalEdit"
+                <button class="btn btn-primary show-bs-modal" data-bs-toggle="modal" data-bs-target="#modalfromstock"
                     data-mode = "edit"
                     data-id = "{{$p->id}}"
                     data-menu_id="{{$p->menu_id}}"

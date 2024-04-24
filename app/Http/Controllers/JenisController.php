@@ -21,9 +21,8 @@ class JenisController extends Controller
         $jenis = jenis::with(['categori'])->latest()->get();
         $categori = Category::pluck('nama','id');
 
-        return view('jenis.index', compact('jenis', 'categori'));
+        return view(('jenis.index'), compact('jenis', 'categori'));
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -94,9 +93,9 @@ class JenisController extends Controller
      * Remove the specified resource from storage.
      */
    
-     public function destroy(Request $request, Jenis $jenis)
+     public function destroy(Request $request, Jenis $jeni)
      {
-        $jenis->delete();
+        $jeni->delete();
 
     if ($request->expectsJson()) {
         return response()->json([], Response::HTTP_NO_CONTENT);

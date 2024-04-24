@@ -6,6 +6,7 @@
 
 @section('content')
 <!-- Default box -->
+<section>
 <div class="card">
   <div class="card-header">
     <h3 class="card-title"> Category </h3>
@@ -43,7 +44,7 @@
 
     @endif
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFormcategegori" data-bs-whatever="@getbootstrap">tambah categori</button>
-
+    
     <div class="mt-3">
       @include('category.data')
     </div>
@@ -56,7 +57,7 @@
 </div>
 <!-- /.card -->
 @include('category.form')
-@include('category.edit')
+@include('category.edit') 
 </section>
 <!-- /.content -->
 @endsection
@@ -66,47 +67,32 @@
 
 <script>
     console.log("halaman category");
-    $(document).ready(function() {
-        // Alert fade out
-        $('.alert-success').fadeTo(2000, 500).slideUp(500, function() {
-            $('.alert-success').slideUp(500);
-        });
+    
+console.log('test')
 
-        // Delete data confirmation
-        $('.delete-data').on('click', function(e) {
-            e.preventDefault();
-            const data = $(this).closest('tr').find('td:eq(1)').text();
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $(e.target).closest('form').submit();
-                } else {
-                    Swal.close();
-                }
-            });
-        });
+$(document).ready(function() {
+  $('#modalFormcategegori').on('show.bs.modal', function(e) {
+    const btn = $(e.relatedTarget);
+    const mode = btn.data('mode');
+    const nama = btn.data('nama');
+    const id = btn.data('id');
+    const modal = $(this);
 
-        // Edit data modal setup
-        // Assuming you're using jQuery
-        $('#modalEdit').on('show.bs.modal', function(e) {
-    let button = $(e.relatedTarget);
-    let id = button.data('id');
-    let nama = button.data('nama');
-    console.log("nama category: " + nama); // Populate the form fields
-    $('#nama_category_edit').val(nama); // Corrected ID
-
-    // Set the form action dynamically
-    $('.form-edit').attr('action', `/category/${id}`);
+    console.log(mode)
+    if (mode === 'edit') {
+      
+      modal.find('.modal-title').text('Edit Data category');
+      modal.find('#nama').val(nama);
+      modal.find('.modal-body form').attr('action', '{{ url("category") }}/' + id);
+      modal.find('#method').html('@method("PUT")');
+    } else {
+      modal.find('.modal-title').text('Input Data category');
+      modal.find('#nama').val(''); // Clear the input field if not in edit mode
+      modal.find('.modal-body form').attr('action', '{{ url("category") }}');
+      modal.find('#method').html(''); // Clear the method input if not in edit mode
+    }
+  });
 });
-
-    });
 </script>
 
 @endpush

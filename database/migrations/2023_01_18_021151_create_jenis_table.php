@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             // $table->unsignedBigInteger('category_id');
             $table->string('nama_jenis', 50);
-            $table->string('kategori_id', 50);
+            $table->foreignId('categori_id');
             $table->timestamps();
         });
     }

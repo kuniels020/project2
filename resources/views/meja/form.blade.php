@@ -10,22 +10,23 @@
 
         <form method="post" action="meja">
           @csrf
+          <div id="method"></div>
           <div class="form-group row">
-            <label for="staticEmail" class="col-sm-4 col-form-label">No Meja</label>
+            <label for="nomor_meja" class="col-sm-4 col-form-label">No Meja</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control" id="ModalFormMeja" name="nomor_meja">
+              <input type="text" class="form-control" id="nomor_meja" name="nomor_meja">
             </div>
           </div>
           <div class="form-group row">
             <label for="staticEmail" class="col-sm-4 col-form-label">Kapasitas</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control" id="ModalFormMeja" name="kapasitas">
+              <input type="text" class="form-control" id="kapasitas" name="kapasitas">
             </div>
           </div>
           <div class="form-group row">
             <label for="staticEmail" class="col-sm-4 col-form-label">status</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control" id="ModalFormMeja" name="status">
+              <input type="text" class="form-control" id="status" name="status">
             </div>
           </div>
 

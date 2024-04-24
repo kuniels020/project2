@@ -73,7 +73,7 @@ class MejaController extends Controller
     {
         $meja->update($request->all());
 
-        return redirect()->route('meja.index')->with('success', 'Data Category berhasil diupdate!');
+        return redirect()->route('meja.index')->with('success', 'Data meja berhasil diupdate!');
     }
 
 

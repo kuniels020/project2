@@ -42,7 +42,7 @@
     </div>
 
     @endif
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFormstock" data-bs-whatever="@getbootstrap">tambah stock</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalfromstock" data-bs-whatever="@getbootstrap">tambah stock</button>
 
     <div class="mt-3">
       @include('stock.data')

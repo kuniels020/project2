@@ -83,7 +83,7 @@ $(document).ready(function() {
       
       modal.find('.modal-title').text('Edit Data meja');
       modal.find('#no').val(nomor_meja);
-      modal.find('#kapasitas').val(kapasitas);
+      // modal.find('#kapasitas').val(kapasitas); 
       modal.find('#status').val(status);
       modal.find('.modal-body form').attr('action', '{{ url("meja") }}/' + id);
       modal.find('#method').html('@method("PUT")');

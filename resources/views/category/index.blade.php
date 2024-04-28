@@ -44,7 +44,12 @@
 
     @endif
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFormcategegori" data-bs-whatever="@getbootstrap">tambah categori</button>
-    
+    <a href ="#" class="btn btn-success">
+      <i class="fas fa-file-excel"></i>export excel
+    </a>
+    <a href ="#" class="btn btn-success">
+      <i class="fas fa-file-pdf"></i>export pdf
+    </a>
     <div class="mt-3">
       @include('category.data')
     </div>
@@ -57,7 +62,6 @@
 </div>
 <!-- /.card -->
 @include('category.form')
-@include('category.edit') 
 </section>
 <!-- /.content -->
 @endsection

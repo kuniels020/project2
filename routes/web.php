@@ -31,6 +31,7 @@ Route::resource('meja', MejaController::class);
 Route::resource('jenis', JenisController::class);
 Route::resource('produk_titipan', ProdukTitipanController::class);
 Route::resource('pemesanan', PemesananController::class);
+Route::resource('transaksi', TransaksiController::class);
 Route::resource('aplikasi', AplikasiConttroller::class);
 Route::resource('pegawai', PegawaiConttroller::class);
 Route::get('export/category',[CategoryController::class, 'exportData'])->name('export-category');

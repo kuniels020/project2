@@ -2,12 +2,11 @@
     <thead>
         <tr>
             <th>No.</th>
-            <th>Nama Produk</th>
-            <th>Nama Supplier</th>
-            <th>Harga Beli</th>
-            <th>Harga Jual</th>
-            <th>Stock</th>
-            <th>keterangan</th>
+            <th>Nama karyawan</th>
+            <th>Tanggal Masuk</th>
+            <th>Waktu Masuk</th>
+            <th>status</th>
+            <th>waktuKeluar</th>
 
         </tr>
     </thead>

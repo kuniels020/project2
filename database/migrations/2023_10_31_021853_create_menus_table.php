@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('menu', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('category_id');
             $table->string('nama');
             $table->string('harga');
             $table->string('image');
-            $table->string('deskripsi');
+            $table->text('deskripsi'); // Ubah ke text jika deskripsi panjang
             $table->unsignedBigInteger('jenis_id');
             $table->foreign('jenis_id')->references('id')->on('jenis')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedInteger('jumlah_pesanan')->default(0);
             $table->timestamps();
         });
     }

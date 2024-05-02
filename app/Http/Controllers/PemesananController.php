@@ -26,10 +26,7 @@ class pemesananController extends Controller
     /**
      * Show the form for creating a neRRw resource.
      */
-    public function create()
-    {
-        //
-    }
+    
 
     /**
      * Store a newly created resource in storage.

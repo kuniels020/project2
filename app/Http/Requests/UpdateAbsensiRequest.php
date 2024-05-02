@@ -11,7 +11,7 @@ class UpdateAbsensiRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateAbsensiRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
-        ];
+            'Namakaryawan'=> 'required',  
+            'tanggalMasuk' => 'required', 
+            'waktuMasuk'=> 'required',  
+            'status'=> 'required', 
+            'waktKeluar'=> 'required',            ];
     }
 }

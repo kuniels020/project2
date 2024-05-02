@@ -11,41 +11,37 @@
         <form method="post" action="produk_titipan">
           @csrf
           <div class="form-group row">
-            <label for="nama_produk" class="col-sm-4 col-form-label">Nama produk</label>
+            <label for="nama_produk" class="col-sm-4 col-form-label">Nama karyawan</label>
             <div class="col-sm-8">
-              <input type="text" class="nama_produk" id="nama_produk" name="nama_produk" placeholder="Nama_produk">
+              <input type="text" class="nama_produk" id="nama_produk" name="nama_produk" placeholder="">
             </div>
           </div><div class="form-group row">
-            <label for="nama_supplier" class="col-sm-4 col-form-label">Nama supplier</label>
+            <label for="nama_supplier" class="col-sm-4 col-form-label">Tanggal Masuk</label>
             <div class="col-sm-8">
-              <input type="text" class="nama_supplier" id="nama_supplier" name="nama_supplier" placeholder="Nama_supplier">
+              <input type="date" class="nama_supplier" id="nama_supplier" name="nama_supplier" placeholder="">
             </div>
           </div>
 
           <div class="form-group row">
-            <label for="harga_beli" class="col-sm-4 col-form-label">Harga Beli</label>
+            <label for="harga_beli" class="col-sm-4 col-form-label">Waktu Masuk</label>
             <div class="col-sm-8">
-              <input type="number" class="form-control" id="harga_beli" name="harga_beli" placeholder="harga_beli">
+              <input type="time" class="form-control" id="harga_beli" name="harga_beli" placeholder="">
             </div>
           </div>
           <div class="form-group row">
-            <label for="harga_jual" class="col-sm-4 col-form-label">Harga jual</label>
+            <label for="harga_jual" class="col-sm-4 col-form-label">Status</label>
             <div class="col-sm-8">
-              <input type="number" class="form-control" id="harga_jual" name="harga_jual" placeholder="harga_jual">
+              <input type="text" class="form-control" id="harga_jual" name="harga_jual" placeholder="">
             </div>
           </div>
           <div class="form-group row">
-            <label for="stock" class="col-sm-4 col-form-label">stock</label>
+            <label for="stock" class="col-sm-4 col-form-label">waktu keluar</label>
             <div class="col-sm-8">
-              <input type="number" class="form-control" id="stock" name="stock" placeholder="stock">
+              <input type="time" class="form-control" id="stock" name="stock" placeholder="">
             </div>
           </div>
 
-          <label for="keterangan" class="col-sm-4 col-form-label">keterangan</label>
-            <div class="col-sm-8">
-              <input type="text" class="keterangan" id="keterangan" name="keterangan" placeholder="keterangan">
-            </div>
-          </div>
+        
 
          
           

@@ -1,14 +1,17 @@
 <?php
 
 namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Menu;
 use Illuminate\Database\Eloquent\Model;
 
-class stock extends Model
+class Stock extends Model
 {
-    use HasFactory;
-
-    protected $table = 'stock';
     protected $fillable = ['menu_id', 'jumlah'];
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class, 'menu_id');
+    }
 }
+
+    

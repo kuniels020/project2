@@ -31,9 +31,11 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
           <ul id="sidebarnav">
+          <a class="sidebar-link" href="{{url('/dashboard')}}" aria-expanded="false">
+
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">Home</span>
+              <span class="hide-menu">dashboard</span>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{url('/category')}}" aria-expanded="false">
@@ -80,10 +82,10 @@
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
-                <span class="hide-menu">produk titipan</span>
+                <span class="hide-menu">Absensi</span>
               </a>
-            </li> -->
             </li>
+            </li> -->
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{url('/pemesanan')}}" aria-expanded="false">
                 <span>
@@ -133,7 +135,11 @@
               </a>
             </li>
             
-            
+            <div class="row">
+    <div class="col-lg-9">
+        <!-- Konten lain di sini -->
+    </div>
+    
         </nav>
         <!-- End Sidebar navigation -->
       </div>
@@ -143,6 +149,7 @@
     <!--  Main wrapper -->
     <div class="body-wrapper">
       <!--  Header Start -->
+  
       <header class="app-header">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="navbar-nav">
@@ -151,8 +158,19 @@
                 <i class="ti ti-menu-2"></i>
               </a>
             </li>
+           <iv class="card recent-sales overflow-auto">
+
+
+
+
+
+
+
+
+            
+            <h3>Pendapatan: <span id="pendapatan"></span></h3>
+
             <li class="nav-item">
-              
             </li>
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
@@ -186,9 +204,11 @@
         </nav>
       </header>
       <!--  Header End -->
+
+      
       <div class="container-fluid">
         <!--  Row 1 -->
-        
+
     <!-- Main content -->
     @yield('content')
     <!-- /.content -->

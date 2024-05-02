@@ -10,6 +10,7 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Menuu</h3>
+            
 
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -44,11 +45,19 @@
             @endif
 
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFormmenu" data-bs-whatever="@getbootstrap">tambah menu</button>
-
+            <a href ="#" class="btn btn-success">
+      <i class="fas fa-file-excel"></i>export excel
+    </a>
+    <a href ="#" class="btn btn-success">
+      <i class="fas fa-file-pdf"></i>export pdf
+    </a>
             <div class="mt-3">
                 @include('menu.data')
             </div>
         </div>
+        
+            
+            
         <!-- /.card-body -->
         <div class="card-footer">
             Footer
@@ -57,6 +66,7 @@
     </div>
 
 </div>
+
 @include('menu.form')
 
 <!-- /.card -->
@@ -65,6 +75,9 @@
 
 @push('script')
 <script>
+   
+
+
     console.log("halaman category");
     
 console.log('test')

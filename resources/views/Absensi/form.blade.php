@@ -14,14 +14,14 @@
           <div class="form-group row">
             <label for="nama" class="col-sm-4 col-form-label">Nama kayawan</label>
             <div class="col-sm-8">
-              <input type="text" class="nama" id="Namakaryawan" name="Namakaryawan" placeholder="Namakaryawan">
+              <input type="text" class="NamaKaryawan" id="NamaKaryawan" name="Namakaryawan" placeholder="NamaKaryawan">
             </div>
           </div>
 
           <div class="form-group row">
             <label for="date" class="col-sm-4 col-form-label">Tanggal Masuk</label>
             <div class="col-sm-8">
-              <input type="date" class="form-control" id="tanggalMasuk" name="tanggalMasuk" placeholder="tanggal">
+              <input type="date" class="form-control" id="tanggalMasuk" name="tanggalMasuk" placeholder="tanggalMasuk">
             </div>
           </div>
 

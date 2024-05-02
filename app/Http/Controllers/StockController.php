@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\stock;
+use App\Models\Menu;
 use App\Http\Requests\StorestockRequest;
 use App\Http\Requests\UpdatestockRequest;
 use Illuminate\Http\Request;
@@ -15,13 +16,10 @@ class stockController extends Controller
      */
     public function index(Request $request)
     {
-        $stock = stock::all();
+        $stock = Stock::with('menu')->get();
+        $menu = Menu::all();
 
-        if ($request->expectsJson()) {
-            return response()->json(['stock' => $stock], Response::HTTP_OK);
-        }
-
-        return view('stock.index', compact('stock'));
+        return view('stock.index', compact('stock', 'menu'));
     }
 
     /**
@@ -36,28 +34,25 @@ class stockController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(StorestockRequest $request)
-    {
-        $stock = stock::create($request->validated());
+{
+    $validatedData = $request->validated();
+    $stock = Stock::create($validatedData);
 
-        if ($request->expectsJson()) {
-            return response()->json(['stock' => $stock], Response::HTTP_CREATED);
-        }
+    // Mengarahkan kembali ke halaman index dengan pesan sukses
+    return redirect()->route('stock.index')->with('success', 'Data Stock berhasil ditambahkan!');
+}
 
-        return redirect()->route('stock.index')->with('success', 'Data Stock berhasil ditambahkan!');
-    }
 
     /**
      * Display the specified resource.
      */
-    public function show(Request $request, stock $stock)
-    {
-        if ($request->expectsJson()) {
-            return response()->json(['stock' => $stock], Response::HTTP_OK);
-        }
-
-        return view('stock.show', compact('stock'));
-    }
-
+    
+     public function showModal()
+     {
+         $menu = Menu::all(); // Ambil data menu dari database
+         return view('path.to.modalfromstock', ['menu' => $menu]); // Kirim data ke tampilan
+     }
+     
     /**
      * Show the form for editing the specified resource.
      */

@@ -20,12 +20,21 @@
             <td>{{ $p->waktKeluar }}</td>
             
             <td>
-            <form action="{{ route('Absensi.destroy', $p->id) }}" method="post" style="display: inline">
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#modalFormAbsensi" data-mode="edit" data-id="{{ $p->id }}" 
+             data-NamaKaryawan="{{ $p->Namakaryawan }}"
+             data-tanggalMasuk="{{ $p->tanggalMasuk }}"
+             data-waktuMasuk="{{ $p->waktuMasuk }}"
+             data-stauts="{{ $p->staus }}"
+             data-waktuKeluar="{{ $p->waktuKeluar }}"
+>
+                 <i class="fas fa-edit"></i>
+</button>
+<form action="{{ route('Absensi.destroy', $p->id) }}" method="post" style="display: inline">
                   @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus?')"> <i class="fas fa-trash"></i></button>
-            
-                </form>
+</form>
+               
             </td>
         </tr>
         @endforeach

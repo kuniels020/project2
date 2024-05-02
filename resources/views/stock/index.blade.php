@@ -43,7 +43,12 @@
 
     @endif
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalfromstock" data-bs-whatever="@getbootstrap">tambah stock</button>
-
+    <a href ="#" class="btn btn-success">
+      <i class="fas fa-file-excel"></i>export excel
+    </a>
+    <a href ="#" class="btn btn-success">
+      <i class="fas fa-file-pdf"></i>export pdf
+    </a>
     <div class="mt-3">
       @include('stock.data')
     </div>

@@ -43,7 +43,12 @@
 
     @endif
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFormMeja" data-bs-whatever="@getbootstrap">tambah meja</button>
-
+    <a href ="#" class="btn btn-success">
+      <i class="fas fa-file-excel"></i>export excel
+    </a>
+    <a href ="#" class="btn btn-success">
+      <i class="fas fa-file-pdf"></i>export pdf
+    </a>
     <div class="mt-3">
       @include('meja.data')
     </div>

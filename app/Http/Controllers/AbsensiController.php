@@ -59,24 +59,28 @@ class AbsensiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAbsensiRequest $request, Absensi $absensi)
+    public function update(UpdateAbsensiRequest $request, Absensi $Absensi)
     {
-        //
+        $validated =$request->validated();
+        $Absensi->update($validated);
+    
+        return redirect()->route('Absensi.index')->with('success', 'Data absensi berhasil diupdate!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
     
-public function destroy(StoreAbsensiRequest $request, Absensi $absensi)
+public function destroy(  Absensi $Absensi)
 {
-    $absensi->delete();
+   
+    $Absensi->delete();
 
-    if ($request->expectsJson()) {
-        return response()->json([], Response::HTTP_NO_CONTENT);
-    }
+    // if ($request->expectsJson()) {
+    //     return response()->json([], Response::HTTP_NO_CONTENT);
+    // }
 
-    return redirect()->route('Absensi.index')->with('success', 'Data Absensi berhasil dihapus!');
+    return redirect()->route('Absensi.index')->with('success', 'Data asbensi berhasil dihapus!');
 }
     }
 

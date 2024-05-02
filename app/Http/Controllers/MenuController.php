@@ -14,20 +14,26 @@ use Illuminate\Support\Facades\DB;
 
 class MenuController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $menu = Menu::with('jenis')->get();
-        $jenis = jenis::all();
-
-        return view('menu.index', compact('jenis', 'menu'));
+        $jenis = Jenis::all();
+        $mostOrderedMenu = Menu::orderByDesc('jumlah_pesanan')->first();
+    
+        return view('menu.index', compact('jenis', 'menu', 'mostOrderedMenu'));
     }
+    
 
     /**
      * Show the form for creating a new resource.
      */
+
+     
+
     public function create()
     {
         //
@@ -37,20 +43,35 @@ class MenuController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(StoreMenuRequest $request)
-    {
-        // dd($request);
-        Menu::create($request->all());
+{
+    $menu = Menu::create($request->all());
+    
+    // Tambahkan logika untuk memperbarui jumlah pesanan
+    $menu->jumlah_pesanan += $request->jumlah_pesanan;
+    $menu->save();
+    
+    return redirect('menu')->with('success', 'Data Menu berhasil ditambahkan!');
+}
 
-        return redirect('menu')->with('success',   'Data Menu berhasil ditambahkan!');
-    }
+public function mostOrderedMenu()
+{
+    $mostOrderedMenu = Menu::orderByDesc('jumlah_pesanan')->first();
+    
+    return $mostOrderedMenu;
+}
+
 
     /**
      * Display the specified resource.
      */
     public function show(Menu $menu)
-    {
-        //
+{
+    if (!$menu) {
+        return redirect()->back()->withErrors('Data menu tidak ditemukan.');
     }
+    
+    // Lanjutkan dengan logika Anda...
+}
 
     /**
      * Show the form for editing the specified resource.
@@ -99,5 +120,4 @@ class MenuController extends Controller
 
     return redirect()->route('menu.index')->with('success', 'Data Menu berhasil dihapus!');
 }
-
 }

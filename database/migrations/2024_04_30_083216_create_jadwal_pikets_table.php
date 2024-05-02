@@ -11,19 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stocks', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('menu_id');
-            $table->integer("jumlah");
+        Schema::create('jadwal_pikets', function (Blueprint $table) {
+            $table->string('id');
+            $table->string('nama');
+            $table->string('hari');
+            $table->string('keterangan');
             $table->timestamps();
-            $table->foreign('menu_id')->references('id')->on('menu')->onDelete('cascade')->onUpdate('cascade');
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('stocks');
+        Schema::dropIfExists('jadwal_pikets');
     }
 };

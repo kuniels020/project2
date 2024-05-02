@@ -8,6 +8,8 @@
                 <div class="pagetitle">
                     <h1>Pemesanan</h1>
                 </div><!-- End Page Title -->
+                <h3>Pendapatan: Rp. <span id="pendapatan"></span></h3>
+
 
                 <div class="container">
                     <div class="item">
@@ -140,6 +142,7 @@ $(function() {
     // Inisialisasi orderedList dan total
     const orderedList = [];
     let total = 0;
+    let pendapatan = 0;  // Variabel untuk menyimpan jumlah pendapatan
 
     // Fungsi untuk menghitung total harga
     const sum = () => {
@@ -164,6 +167,9 @@ $(function() {
 
             // Perbarui total harga
             $('#total').text(sum());
+
+            // Update pendapatan di UI
+            $('#pendapatan').text(pendapatan);
         }
     };
 
@@ -192,6 +198,11 @@ $(function() {
 
     // Event listener untuk tombol bayar
     $('#btn-bayar').on('click', function() {
+        const totalBayar = sum(); // Dapatkan total pembayaran
+
+        // Update jumlah pendapatan
+        pendapatan += totalBayar;
+
         $.ajax({
             url: "{{ route('transaksi.store') }}",
             method: "POST",
@@ -258,6 +269,11 @@ $(function() {
 
         // Perbarui total
         $('#total').text(sum());
+       // Perbarui elemen UI yang menampilkan pendapatan
+       $('#pendapatan').text(`Rp. ${pendapatan.toLocaleString()}`);
+
+// Log jumlah pendapatan
+console.log(`Jumlah Pendapatan: Rp. ${pendapatan.toLocaleString()}`);
     });
 });
 </script>
